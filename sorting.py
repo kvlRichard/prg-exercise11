@@ -24,7 +24,7 @@ def bubble_sort(values_list):
     plt.ion()
     plt.show()
     for j in range(len(values)):
-
+        swapped = False
         for i in range(0,len(values)-j-1):
             index_highlight1 = i
             index_highlight2 = i + 1
@@ -38,7 +38,9 @@ def bubble_sort(values_list):
 
             if values[i] > values[i+1]:
                 values[i],values[i+1] = values[i+1],values[i]
-
+                swapped = True
+        if swapped is False:
+            return values
     plt.ioff()
     plt.show()
     return values
